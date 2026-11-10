@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Biblioteca Visual de HTML e CSS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="bar">
+<div class="logo"><span class="mark">&lt;/&gt;</span><span>Biblioteca Visual<small>HTML · CSS · Libras</small></span></div>
+<div class="acts"><button class="btn" id="theme2" aria-label="Mudar tema claro ou escuro">🌓</button><button class="btn fill" id="libBtn" data-libras>🤟 Ativar Libras</button></div>
+<nav aria-label="Menu principal" id="nav"></nav>
+</div></header>
+<main id="main" tabindex="-1">
+
+<section id="inicio">
+<div class="hero"><div><span class="pill">📘 Baseado na MDN · 🔇 Sem som · 🤟 Com Libras</span><h1>Aprenda HTML e CSS com os olhos 👀</h1><p>Lições visuais, exemplos ao vivo e perguntas. Do zero ao seu primeiro site.</p><div class="row"><button class="btn" data-go="html">🚀 Começar agora</button><button class="btn" data-libras>🤟 Ativar Libras</button></div></div><div class="mock" aria-hidden="true"><div class="wb"><i></i><i></i><i></i><span>index.html</span></div><pre class="mk-code"><span class="t">&lt;h1</span> <span class="p">style</span>=<span class="s">"color:purple"</span><span class="t">&gt;</span>
+Olá, mundo!
+<span class="t">&lt;/h1&gt;</span></pre><div class="mk-out" style="color:purple">Olá, mundo! 👋</div></div></div>
+<div class="flow"><div>✍️<small>Você escreve</small></div><b>➜</b><div>🌐<small>Navegador lê</small></div><b>➜</b><div>👀<small>Página aparece</small></div></div>
+<div class="tiles"><div class="tile"><b id="sHtml">0/9</b><span>🧱 HTML</span></div><div class="tile"><b id="sCss">0/9</b><span>🎨 CSS</span></div></div>
+<div class="card">
+<h3>Seu progresso</h3>
+<div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="18" id="pbar"><div id="pfill"></div></div>
+<p id="ptxt" class="mut"></p>
+</div>
+<div class="grid"><div class="card feat"><div class="fi" style="background:#d97706">🧱</div><h3>HTML</h3><p>A estrutura da página.</p><button class="btn fill" data-go="html">Começar</button></div><div class="card feat"><div class="fi" style="background:#2563eb">🎨</div><h3>CSS</h3><p>Cores, tamanhos e layout.</p><button class="btn fill" data-go="css">Começar</button></div><div class="card feat"><div class="fi" style="background:#be185d">❓</div><h3>Perguntas</h3><p>Teste o que aprendeu.</p><button class="btn fill" data-go="perguntas">Fazer</button></div><div class="card feat"><div class="fi" style="background:#0f7a3d">✍️</div><h3>Praticar</h3><p>Escreva código e veja na hora.</p><button class="btn fill" data-go="praticar">Abrir editor</button></div><div class="card feat"><div class="fi" style="background:#7c3aed">🤟</div><h3>Libras</h3><p>Tradutor e vídeos em Libras.</p><button class="btn fill" data-go="libras">Ver Libras</button></div><div class="card feat"><div class="fi" style="background:#ea580c">🧭</div><h3>Guias</h3><p>27 temas: seletores, Flexbox, Grid, acessibilidade…</p><button class="btn fill" data-go="guias">Abrir guias</button></div><div class="card feat"><div class="fi" style="background:#0891b2">📚</div><h3>Referência</h3><p>Tags e propriedades explicadas.</p><button class="btn fill" data-go="referencia">Consultar</button></div></div>
+<div class="card"><h3>📘 Fonte: MDN Web Docs</h3><p>As lições seguem a MDN, a documentação da Mozilla. Cada lição e cada item da Referência tem um botão 📘 MDN.</p><div class="row"><a class="btn mdn" href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">📘 MDN HTML</a><a class="btn mdn" href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank" rel="noopener noreferrer">📘 MDN CSS</a></div></div>
+<div class="card">
+<h3>Como usar</h3>
+<p>1. Leia a explicação curta. 2. Veja o código e o resultado. 3. Responda a pergunta. 4. Pratique no editor.</p>
+<p class="mut">Dica: o português escrito pode ser difícil. Se quiser tradução em Libras, use o <a href="https://vlibras.gov.br" target="_blank" rel="noopener noreferrer">VLibras</a> (gratuito, do governo).</p>
+<div class="row"><button class="btn" id="theme">🌓 Mudar tema claro/escuro</button><button class="btn" id="zoom">🔎 Aumentar letra</button><button class="btn" id="reset">↺ Zerar progresso</button></div>
+</div>
+</section>
+
+<section id="html" hidden><h1>🧱 HTML</h1><p class="mut">HTML diz o que cada parte da página é.</p><div id="htmlList"></div></section>
+<section id="css" hidden><h1>🎨 CSS</h1><p class="mut">CSS diz como cada parte da página fica.</p><div id="cssList"></div></section>
+
+<section id="perguntas" hidden>
+<h1>❓ Perguntas</h1>
+<p>Teste o que você aprendeu. Acerte para concluir a lição.</p>
+<div class="row" role="group" aria-label="Filtro de perguntas"><button class="btn fill" data-qf="">Tudo</button><button class="btn" data-qf="html">HTML</button><button class="btn" data-qf="css">CSS</button></div>
+<div id="quizList"></div>
+</section>
+
+<section id="praticar" hidden>
+<h1>✍️ Praticar</h1>
+<p>Mude o código e veja o resultado abaixo. Ele atualiza sozinho.</p>
+<div class="lab">Seu código</div>
+<textarea id="pgCode" spellcheck="false" aria-label="Editor de código"></textarea>
+<div class="row"><button class="btn fill" id="pgRun">▶ Atualizar resultado</button><button class="btn" id="pgReset">↺ Voltar ao exemplo</button></div>
+<div class="lab">Resultado</div>
+<iframe id="pgFrame" sandbox title="Resultado do seu código"></iframe>
+<div class="card"><h3>Desafios</h3><p>1. Troque o texto do título. 2. Mude a cor do título para <code class="i">blue</code>. 3. Adicione mais um item na lista. 4. Aumente o <code class="i">font-size</code> do parágrafo.</p></div>
+</section>
+
+<section id="libras" hidden>
+<h1>🤟 Libras</h1>
+<div class="card"><h3>O que é Libras?</h3>
+<p>Libras é a Língua Brasileira de Sinais. É uma língua oficial do Brasil (Lei 10.436/2002).</p>
+<p>Ela tem gramática própria. Não é o português feito com as mãos. Por isso este site usa frases curtas e simples.</p></div>
+<div class="card"><h3>1. Tradutor VLibras neste site</h3>
+<p>Procure o botão azul com a mão no canto da tela. Clique nele, depois selecione um texto. Um avatar 3D sinaliza em Libras.</p>
+<p class="mut">O VLibras precisa de internet. Se o botão não aparecer, abra o site pelo navegador conectado à internet.</p></div>
+<div class="card"><h3>2. Vídeos em Libras de cada lição</h3>
+<p>Cada lição e cada palavra do glossário tem o botão <strong>🤟 Buscar em Libras</strong>. Ele abre uma busca de vídeos no YouTube.</p>
+<p class="mut">Atenção: sinais de termos técnicos podem mudar de região para região. Se puder, confirme com um intérprete ou com a comunidade surda.</p></div>
+<div class="card"><h3>3. Sites úteis</h3>
+<div class="row">
+<a class="btn" href="https://vlibras.gov.br" target="_blank" rel="noopener noreferrer">VLibras</a>
+<a class="btn" href="https://www.handtalk.me" target="_blank" rel="noopener noreferrer">Hand Talk</a>
+<a class="btn" href="https://www.spreadthesign.com" target="_blank" rel="noopener noreferrer">Spread the Sign</a>
+<a class="btn" href="https://www.ines.gov.br" target="_blank" rel="noopener noreferrer">INES</a>
+</div></div>
+<div class="card"><h3>Para quem ensina</h3>
+<p>Use legenda em vídeos, janela de intérprete de Libras, exemplos visuais e frases curtas. Combine sinais para termos técnicos com a turma.</p></div>
+</section>
+
+<section id="guias" hidden>
+<h1>🧭 Guias completos</h1>
+<p>Resumos de HTML e CSS por tema. Toque num tema para abrir.</p>
+<label for="gq" class="lab">Buscar nos guias</label>
+<input type="search" id="gq" placeholder="Ex.: flex, alt, input, especificidade…">
+<div class="row" role="group" aria-label="Filtro"><button class="btn fill" data-gg="">Tudo</button><button class="btn" data-gg="H">🧱 HTML</button><button class="btn" data-gg="C">🎨 CSS</button></div>
+<div id="gl2"></div>
+</section>
+
+<section id="referencia" hidden>
+<h1>📚 Referência</h1>
+<p>Tags HTML, propriedades CSS, seletores, funções, unidades e @regras. Cada item tem link para a MDN.</p>
+<label for="rq" class="lab">Buscar</label>
+<input type="search" id="rq" placeholder="Ex.: link, cor, flex…">
+<div class="row" role="group" aria-label="Filtro"><button class="btn fill" data-f="">Tudo</button><button class="btn" data-f="H">HTML</button><button class="btn" data-f="C">CSS</button><button class="btn" data-f="S">🎯 Seletores</button><button class="btn" data-f="F">⚙️ Funções e @</button></div>
+<dl id="rl"></dl><p id="rnone" class="mut" hidden>Nada encontrado.</p>
+</section>
+
+<section id="glossario" hidden>
+<h1>📖 Glossário</h1>
+<p>Palavras do mundo da programação, com explicação simples.</p>
+<label for="q" class="lab">Buscar palavra</label>
+<input type="search" id="q" placeholder="Digite aqui…">
+<dl id="gl"></dl>
+<p id="gnone" class="mut" hidden>Nenhuma palavra encontrada.</p>
+</section>
+</main>
+<footer class="src">📘 Referência: <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a> (Mozilla), texto sob licença CC-BY-SA 2.5. Também consultei especificações do WHATWG e do W3C e guias abertos. Os textos deste site são resumos feitos para esta biblioteca.</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
